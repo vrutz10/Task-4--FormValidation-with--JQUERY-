@@ -1,0 +1,85 @@
+$("#checkBox").checked(function () {
+    let valid = true;
+    if ($('input[type=checkbox]:checked').length == 0) {
+        $("#error_gender").show();
+        $("#error_gender").html("* Please select any one");
+        $("#error_gender").css("color", "red");
+        valid = false;
+    }
+    else {
+        $("#error_gender").hide();
+        return valid;
+    }
+
+});
+
+
+// let valid = true;
+    // if ($('input[type=checkbox]:checked').length == 0) {
+    //     $("#error_gender").show();
+    //     $("#error_gender").html("* Please select any one");
+    //     $("#error_gender").css("color", "red");
+    //     valid = false;
+    // }
+    // else {
+    //     $("#error_gender").hide();
+    //     return valid;
+    // }
+
+    if ($("#userName").val() != "" && $("#emailAddress").val() != "" && 
+        $("#phoneNo").val() != "" &&
+        $("#addressOne").val() != "" && $("#addressTwo").val() != "" &&
+        $("#addressThree").val() != "") {
+        $("#checkBox:checked").val();
+        $(':input[type="submit"]').prop('disabled', false);
+    }
+    else {
+        // $("#checkBox").prop("checked",true);
+        $(':input[type="submit"]').prop('disabled', true);
+        $("#error_checkBox").show();
+        //$("#error_checkBox").html("* Please agree terms and conditions");
+        $("#error_checkBox").css("color", "red");
+    }
+
+
+
+    //     //$("radioOne").prop("checked",true) || $("radioTwo").prop("checked",true)
+     if ($("input[name='Gender']").val()) {
+         $("#error_gender").hide();
+     }
+//     else {
+//         $("#error_gender").show();
+//         $("#error_gender").html("* Please select any one");
+//         $("#error_gender").css("color", "red");
+//     }
+
+
+=============================
+
+let isAnyRadioButtonCecked = $("input[name='Gender']:checked").val();
+
+    if(isAnyRadioButtonCecked){
+        //alert('One of the radio buttons is checked!');
+        $("#error_gender").hide();
+        $(':input[type="submit"]').prop('disabled', false);
+    }else{
+        //alert('Nothing is checked!');
+        $("#error_gender").show();
+        $("#error_gender").html("* Please select gender");
+        $("#error_gender").css("color", "red");
+        $("#checkBox").prop('checked', false);
+    }
+
+===============================
+
+$("#userName").val() != "" && 
+    $("#emailAddress").val() != "" && 
+    $("#phoneNo").val() != "" &&
+    $("#addressOne").val() != "" && $("#addressTwo").val() != "" &&
+    $("#addressThree").val() != ""
+
+
+
+    validateUserName() === true && validateEmailAddress() === true &&
+    validaeDate() === true && validateAddress1() === true && validateAddress2() === true &&
+    validateAddress3() === true && validatePhoneNo() === true
